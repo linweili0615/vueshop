@@ -40,9 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps.users.apps.UsersConfig',
     'DjangoUeditor',
     'xadmin',
+    'crispy_forms',
+    'apps.users.apps.UsersConfig',
     'user_operation.apps.UserOperationConfig',
     'goods.apps.GoodsConfig',
     'trade.apps.TradeConfig'
@@ -130,4 +131,9 @@ USE_TZ = True    #默认是Ture，时间是utc时间，由于我们要用本地�
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
+# 设置上传文件的路径
+MEDIA_URL="/media/"
+MEDIA_ROOT=os.path.join(BASE_DIR,"media")
+
 STATIC_URL = '/static/'
+
