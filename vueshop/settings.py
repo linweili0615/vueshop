@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'DjangoUeditor',
     'xadmin',
+    'rest_framework',
     'crispy_forms',
     'apps.users.apps.UsersConfig',
     'user_operation.apps.UserOperationConfig',
@@ -90,8 +91,8 @@ DATABASES = {
         'NAME': 'vueshop',
         'USER': 'root',
         'PASSWORD': '123456a',
-        'HOST':'192.168.1.3',
-        # 'HOST':'10.100.99.164',
+        # 'HOST':'192.168.1.3',
+        'HOST':'10.100.99.164',
         'OPTIONS':{'init_command': 'SET storage_engine=INNODB'},
     }
 }

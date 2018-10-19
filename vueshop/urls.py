@@ -18,9 +18,16 @@ import xadmin
 from django.urls import path, include
 from django.views.static import serve
 from vueshop.settings import MEDIA_ROOT
+from rest_framework.documentation import include_docs_urls
+# from goods.view_base import GoodsListView
+from goods.views import GoodsListView
 
 urlpatterns = [
     path('xadmin/', xadmin.site.urls),
     path('ueditor/',include('DjangoUeditor.urls')),
-    path('media/<path:path>',serve,{'document_root':MEDIA_ROOT})
+    path('media/<path:path>',serve,{'document_root':MEDIA_ROOT}),
+    path('docs', include_docs_urls(title='drf')),
+    path('api-auth/', include('rest_framework.urls')),
+    path('goods/',GoodsListView.as_view(), name='good-list'),
+
 ]
